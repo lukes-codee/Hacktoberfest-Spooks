@@ -8,13 +8,22 @@ document.addEventListener('click', function (e) {
         const newRand = Math.random();
         //Create 50/50 change of trick or treat
         if (newRand < 0.5){
+           if(newRand>0.01)
+            {
             console.log('trick');
             element.classList.add("trick");
-            element.classList.remove("start","treat");
+            element.classList.remove("start","treat","dftrick");
+              }else {
+                console.log('deep fried trick');
+                element.classList.add("dftrick");
+                element.classList.remove("start","treat","trick");
+
+
+            }
         } else {
             console.log('treat');
             element.classList.add("treat");
-            element.classList.remove("start","trick");
+            element.classList.remove("start","trick","dftrick");
         }
     };
 
